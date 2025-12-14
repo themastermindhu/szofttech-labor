@@ -4,31 +4,31 @@ export default function CommunityPage() {
   const benefits = [
     {
       icon: Users,
-      title: 'Global Network',
-      description: 'Connect with 2,776+ test designers from 15+ countries worldwide.',
+      title: 'Globális hálózat',
+      description: 'Kapcsolódj több mint 2 776 teszttervezőhöz 15+ országból világszerte.',
     },
     {
       icon: MessageSquare,
-      title: 'Expert Discussions',
-      description: 'Participate in forums, Q&A sessions, and knowledge sharing with industry experts.',
+      title: 'Szakértői beszélgetések',
+      description: 'Vegyél részt fórumokon, kérdezz–felelek alkalmakon és tudásmegosztásban iparági szakértőkkel.',
     },
     {
       icon: BookOpen,
-      title: 'Exclusive Content',
-      description: 'Access members-only resources, case studies, and advanced learning materials.',
+      title: 'Exkluzív tartalmak',
+      description: 'Férj hozzá csak tagoknak elérhető anyagokhoz, esettanulmányokhoz és haladó tanulási forrásokhoz.',
     },
     {
       icon: Award,
-      title: 'Recognition',
-      description: 'Earn badges, certifications, and recognition for your contributions.',
+      title: 'Elismerés',
+      description: 'Szerezz jelvényeket, tanúsítványokat és elismerést a hozzájárulásaidért.',
     },
   ];
 
   const stats = [
-    { value: '2,776+', label: 'Active Members' },
-    { value: '15+', label: 'Countries' },
-    { value: '500+', label: 'Discussions' },
-    { value: '100%', label: 'Free to Join' },
+    { value: '2 776+', label: 'Aktív tag' },
+    { value: '15+', label: 'Ország' },
+    { value: '500+', label: 'Beszélgetés' },
+    { value: '100%', label: 'Ingyenes csatlakozás' },
   ];
 
   return (
@@ -36,11 +36,11 @@ export default function CommunityPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Test Design Community
+            Teszttervező Közösség
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Join a vibrant community of test designers sharing knowledge, experiences, and
-            best practices to advance the field of software testing.
+            Csatlakozz egy aktív teszttervező közösséghez, ahol tudásmegosztás,
+            tapasztalatcsere és bevált gyakorlatok segítik a szoftvertesztelés fejlődését.
           </p>
         </div>
 
@@ -74,14 +74,14 @@ export default function CommunityPage() {
         <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl shadow-xl p-8 md:p-12 text-white text-center">
           <Users className="h-16 w-16 mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Join?
+            Készen állsz a csatlakozásra?
           </h2>
           <p className="text-xl text-cyan-50 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Membership is completely free. Join thousands of test designers who are elevating
-            their skills and contributing to the community.
+            A tagság teljesen ingyenes. Csatlakozz több ezer teszttervezőhöz,
+            akik fejlesztik tudásukat és aktívan hozzájárulnak a közösséghez.
           </p>
           <button className="group px-8 py-4 bg-white text-cyan-700 rounded-xl text-lg font-semibold hover:bg-cyan-50 transition-all shadow-lg hover:shadow-xl flex items-center gap-2 mx-auto">
-            Apply Now
+            Jelentkezés most
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
