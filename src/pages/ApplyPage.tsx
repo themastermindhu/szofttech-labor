@@ -17,7 +17,9 @@ export default function ApplyPage() {
     e.preventDefault();
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -25,12 +27,12 @@ export default function ApplyPage() {
   };
 
   const benefits = [
-    'Access to exclusive learning resources',
-    'Free tools and utilities',
-    'Community forum participation',
-    'Monthly webinars and workshops',
-    'Networking opportunities',
-    'Certificate of membership',
+    'Hozzáférés exkluzív tanulási anyagokhoz',
+    'Ingyenes eszközök és segédletek',
+    'Részvétel a közösségi fórumon',
+    'Havi webináriumok és workshopok',
+    'Kapcsolatépítési lehetőségek',
+    'Tagsági tanúsítvány',
   ];
 
   return (
@@ -39,18 +41,19 @@ export default function ApplyPage() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-cyan-100 text-cyan-700 px-4 py-2 rounded-full mb-6 font-medium">
             <CheckCircle className="h-5 w-5" />
-            100% Free Membership
+            100% ingyenes tagság
           </div>
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Join Our Community
+            Csatlakozz a közösségünkhöz
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Become part of a global community of test designers committed to excellence in software quality.
+            Légy része egy globális teszttervező közösségnek, amely elkötelezett a
+            kiváló szoftverminőség iránt.
           </p>
         </div>
 
         <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl shadow-xl p-8 mb-8 text-white">
-          <h2 className="text-2xl font-bold mb-4">Membership Benefits</h2>
+          <h2 className="text-2xl font-bold mb-4">A tagság előnyei</h2>
           <div className="grid md:grid-cols-2 gap-3">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-center gap-2">
@@ -66,14 +69,14 @@ export default function ApplyPage() {
             <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
               <UserPlus className="h-5 w-5 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900">Application Form</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Jelentkezési űrlap</h2>
           </div>
 
           <form onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label htmlFor="firstName" className="block text-sm font-semibold text-gray-900 mb-2">
-                  First Name
+                  Keresztnév
                 </label>
                 <input
                   type="text"
@@ -88,7 +91,7 @@ export default function ApplyPage() {
 
               <div>
                 <label htmlFor="lastName" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Last Name
+                  Vezetéknév
                 </label>
                 <input
                   type="text"
@@ -104,7 +107,7 @@ export default function ApplyPage() {
 
             <div className="mb-6">
               <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                Email Address
+                E-mail cím
               </label>
               <input
                 type="email"
@@ -120,7 +123,7 @@ export default function ApplyPage() {
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label htmlFor="country" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Country
+                  Ország
                 </label>
                 <input
                   type="text"
@@ -135,7 +138,7 @@ export default function ApplyPage() {
 
               <div>
                 <label htmlFor="organization" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Organization
+                  Szervezet / cég
                 </label>
                 <input
                   type="text"
@@ -151,7 +154,7 @@ export default function ApplyPage() {
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label htmlFor="role" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Current Role
+                  Jelenlegi szerepkör
                 </label>
                 <select
                   id="role"
@@ -161,20 +164,20 @@ export default function ApplyPage() {
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 >
-                  <option value="">Select your role</option>
-                  <option value="tester">Software Tester</option>
-                  <option value="qa">QA Engineer</option>
-                  <option value="lead">Test Lead</option>
-                  <option value="manager">QA Manager</option>
-                  <option value="developer">Developer</option>
-                  <option value="student">Student</option>
-                  <option value="other">Other</option>
+                  <option value="">Válaszd ki a szerepköröd</option>
+                  <option value="tester">Szoftvertesztelő</option>
+                  <option value="qa">QA mérnök</option>
+                  <option value="lead">Tesztvezető</option>
+                  <option value="manager">QA menedzser</option>
+                  <option value="developer">Fejlesztő</option>
+                  <option value="student">Diák</option>
+                  <option value="other">Egyéb</option>
                 </select>
               </div>
 
               <div>
                 <label htmlFor="experience" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Years of Experience
+                  Tapasztalat (években)
                 </label>
                 <select
                   id="experience"
@@ -184,19 +187,19 @@ export default function ApplyPage() {
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 >
-                  <option value="">Select experience</option>
-                  <option value="0-1">Less than 1 year</option>
-                  <option value="1-3">1-3 years</option>
-                  <option value="3-5">3-5 years</option>
-                  <option value="5-10">5-10 years</option>
-                  <option value="10+">10+ years</option>
+                  <option value="">Válaszd ki a tapasztalatot</option>
+                  <option value="0-1">Kevesebb mint 1 év</option>
+                  <option value="1-3">1–3 év</option>
+                  <option value="3-5">3–5 év</option>
+                  <option value="5-10">5–10 év</option>
+                  <option value="10+">10+ év</option>
                 </select>
               </div>
             </div>
 
             <div className="mb-6">
               <label htmlFor="motivation" className="block text-sm font-semibold text-gray-900 mb-2">
-                Why do you want to join? (Optional)
+                Miért szeretnél csatlakozni? (opcionális)
               </label>
               <textarea
                 id="motivation"
@@ -205,7 +208,7 @@ export default function ApplyPage() {
                 onChange={handleChange}
                 rows={4}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent resize-none"
-                placeholder="Tell us about your interest in test design..."
+                placeholder="Írd le, miért érdekel a teszttervezés..."
               />
             </div>
 
@@ -213,15 +216,15 @@ export default function ApplyPage() {
               type="submit"
               className="w-full group flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg text-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl"
             >
-              Submit Application
+              Jelentkezés elküldése
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </form>
         </div>
 
         <p className="text-center text-gray-600 mt-8">
-          Applications are typically reviewed within 2-3 business days.
-          You'll receive a confirmation email once approved.
+          A jelentkezéseket általában 2–3 munkanapon belül elbíráljuk.
+          Jóváhagyás után visszaigazoló e-mailt küldünk.
         </p>
       </div>
     </div>
