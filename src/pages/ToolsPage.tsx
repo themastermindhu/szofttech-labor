@@ -4,44 +4,59 @@ export default function ToolsPage() {
   const tools = [
     {
       id: '1',
-      name: 'Boundary Value Calculator',
-      description: 'Automatically identify boundary values for numeric and date ranges in your test scenarios.',
-      features: ['Valid/Invalid boundaries', 'Multiple data types', 'Export test cases'],
+      name: 'Határérték-kalkulátor',
+      description:
+        'Automatikusan azonosítja a határértékeket numerikus és dátumtartományokhoz a teszteseteidben.',
+      features: ['Érvényes/érvénytelen határértékek', 'Több adattípus', 'Tesztesetek exportálása'],
       status: 'Available',
     },
     {
       id: '2',
-      name: 'Decision Table Generator',
-      description: 'Create comprehensive decision tables from business rules and generate optimized test cases.',
-      features: ['Rule validation', 'Contradiction detection', 'CSV export'],
+      name: 'Döntési tábla generátor',
+      description:
+        'Készíts átfogó döntési táblákat üzleti szabályokból, és generálj optimalizált teszteseteket.',
+      features: ['Szabályvalidálás', 'Ellentmondások felismerése', 'CSV export'],
       status: 'Available',
     },
     {
       id: '3',
-      name: 'Pairwise Test Designer',
-      description: 'Generate efficient pairwise combinations for configuration testing with multiple parameters.',
-      features: ['N-way combinations', 'Constraint support', 'Coverage analysis'],
+      name: 'Páronkénti teszttervező',
+      description:
+        'Hatékony pairwise kombinációkat generál konfigurációs teszteléshez több paraméterrel.',
+      features: ['N-utas kombinációk', 'Megkötések támogatása', 'Lefedettség-elemzés'],
       status: 'Available',
     },
     {
       id: '4',
-      name: 'State Transition Modeler',
-      description: 'Visual tool for creating state transition diagrams and generating test paths.',
-      features: ['Visual editor', 'Path coverage', 'Test case export'],
+      name: 'Állapotátmenet-modellező',
+      description:
+        'Vizuális eszköz állapotátmeneti diagramok készítéséhez és tesztútvonalak generálásához.',
+      features: ['Vizuális szerkesztő', 'Útvonal-lefedettség', 'Teszteset export'],
       status: 'Coming Soon',
     },
   ];
+
+  const getStatusLabel = (status: string) => {
+    switch (status) {
+      case 'Available':
+        return 'Elérhető';
+      case 'Coming Soon':
+        return 'Hamarosan';
+      default:
+        return status;
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Free Testing Tools
+            Ingyenes tesztelési eszközök
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Powerful, free tools to streamline your test design process and improve efficiency.
-            All tools are open-source and available to the community.
+            Erőteljes, ingyenes eszközök a teszttervezési folyamat egyszerűsítéséhez és a
+            hatékonyság növeléséhez. Minden eszköz nyílt forráskódú és elérhető a közösség számára.
           </p>
         </div>
 
@@ -62,7 +77,7 @@ export default function ToolsPage() {
                       : 'bg-gray-100 text-gray-700'
                   }`}
                 >
-                  {tool.status}
+                  {getStatusLabel(tool.status)}
                 </span>
               </div>
 
@@ -70,7 +85,7 @@ export default function ToolsPage() {
               <p className="text-gray-600 mb-6 leading-relaxed">{tool.description}</p>
 
               <div className="mb-6">
-                <h4 className="text-sm font-semibold text-gray-900 mb-2">Key Features:</h4>
+                <h4 className="text-sm font-semibold text-gray-900 mb-2">Fő funkciók:</h4>
                 <ul className="space-y-2">
                   {tool.features.map((feature, index) => (
                     <li key={index} className="flex items-center gap-2 text-gray-600">
@@ -91,7 +106,7 @@ export default function ToolsPage() {
                   }`}
                 >
                   <ExternalLink className="h-5 w-5" />
-                  Launch Tool
+                  Eszköz indítása
                 </button>
                 <button className="p-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
                   <Github className="h-5 w-5" />
@@ -104,18 +119,18 @@ export default function ToolsPage() {
         <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl shadow-xl p-8 md:p-12 text-white">
           <div className="text-center max-w-3xl mx-auto">
             <Wrench className="h-16 w-16 text-cyan-400 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold mb-4">Want to Contribute?</h2>
+            <h2 className="text-3xl font-bold mb-4">Szeretnél hozzájárulni?</h2>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              All our tools are open-source. Join our community of developers and help us build
-              better testing tools for everyone.
+              Minden eszközünk nyílt forráskódú. Csatlakozz fejlesztői közösségünkhöz, és segíts
+              még jobb tesztelési eszközöket építeni mindenki számára.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
                 <Github className="h-5 w-5" />
-                View on GitHub
+                Megtekintés a GitHubon
               </button>
               <button className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20">
-                Join Community
+                Csatlakozás a közösséghez
               </button>
             </div>
           </div>
