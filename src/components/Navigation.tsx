@@ -10,12 +10,12 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home', icon: null },
-    { id: 'learn', label: 'Learn', icon: BookOpen },
-    { id: 'exercises', label: 'Exercises', icon: Target },
-    { id: 'tools', label: 'Tools', icon: Wrench },
-    { id: 'community', label: 'Community', icon: Users },
-    { id: 'contact', label: 'Contact', icon: Mail },
+    { id: 'home', label: 'Kezdőlap', icon: null },
+    { id: 'learn', label: 'Tanulás', icon: BookOpen },
+    { id: 'exercises', label: 'Gyakorlatok', icon: Target },
+    { id: 'tools', label: 'Eszközök', icon: Wrench },
+    { id: 'community', label: 'Közösség', icon: Users },
+    { id: 'contact', label: 'Kapcsolat', icon: Mail },
   ];
 
   return (
@@ -28,8 +28,8 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 <Target className="h-6 w-6 text-white" />
               </div>
               <div>
-                <div className="text-lg font-bold text-gray-900">Test Design</div>
-                <div className="text-xs text-gray-600 -mt-1">Learn. Exercise. Apply.</div>
+                <div className="text-lg font-bold text-gray-900">Teszttervezés</div>
+                <div className="text-xs text-gray-600 -mt-1">Tanulj. Gyakorolj. Alkalmazd.</div>
               </div>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               onClick={() => onNavigate('apply')}
               className="ml-4 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg text-sm font-medium hover:from-cyan-600 hover:to-blue-700 transition-all shadow-sm hover:shadow-md"
             >
-              Join Community
+              Csatlakozás a közösséghez
             </button>
             <button
               onClick={() => onNavigate('login')}
@@ -98,7 +98,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               }}
               className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg text-sm font-medium hover:from-cyan-600 hover:to-blue-700 transition-all shadow-sm"
             >
-              Join Community
+              Csatlakozás a közösséghez
             </button>
           </div>
         </div>
