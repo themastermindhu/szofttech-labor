@@ -9,58 +9,71 @@ export default function LearnPage() {
   const resources: Resource[] = [
     {
       id: '1',
-      title: 'Complete Guide to Test Design',
+      title: 'Teljes útmutató a teszttervezéshez',
       type: 'book',
-      description: 'A comprehensive guide covering all essential test design techniques from fundamentals to advanced strategies.',
-      imageUrl: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description:
+        'Átfogó útmutató, amely a teszttervezés minden lényeges technikáját lefedi az alapoktól a haladó stratégiákig.',
+      imageUrl:
+        'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800',
       downloadUrl: '#',
     },
     {
       id: '2',
-      title: 'Equivalence Partitioning Best Practices',
+      title: 'Ekvivalenciaosztály-elemzés – bevált gyakorlatok',
       type: 'whitepaper',
-      description: 'Deep dive into equivalence partitioning with real-world examples and common pitfalls to avoid.',
-      imageUrl: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description:
+        'Mélységi áttekintés az ekvivalenciaosztály-elemzésről valós példákkal, és a leggyakoribb buktatókkal, amelyeket érdemes elkerülni.',
+      imageUrl:
+        'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
       downloadUrl: '#',
     },
     {
       id: '3',
-      title: 'Test Design Pattern Library',
+      title: 'Teszttervezési mintakönyvtár',
       type: 'book',
-      description: 'Reusable test design patterns for common software testing scenarios and challenges.',
-      imageUrl: 'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description:
+        'Újrahasznosítható teszttervezési minták gyakori szoftvertesztelési helyzetekhez és kihívásokhoz.',
+      imageUrl:
+        'https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=800',
       downloadUrl: '#',
     },
     {
       id: '4',
-      title: 'Risk-Based Testing Framework',
+      title: 'Kockázatalapú tesztelési keretrendszer',
       type: 'whitepaper',
-      description: 'Learn how to prioritize test efforts based on risk analysis and business impact.',
-      imageUrl: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description:
+        'Tanuld meg, hogyan priorizáld a tesztelési erőfeszítéseket kockázatelemzés és üzleti hatás alapján.',
+      imageUrl:
+        'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800',
       downloadUrl: '#',
     },
     {
       id: '5',
-      title: 'Boundary Value Analysis Toolkit',
+      title: 'Határérték-analízis eszközkészlet',
       type: 'tool',
-      description: 'Interactive tools to help identify and test boundary values in your applications.',
-      imageUrl: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description:
+        'Interaktív eszközök, amelyek segítenek az alkalmazásaid határértékeinek azonosításában és tesztelésében.',
+      imageUrl:
+        'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800',
       downloadUrl: '#',
     },
     {
       id: '6',
-      title: 'Decision Table Generator',
+      title: 'Döntési tábla generátor',
       type: 'tool',
-      description: 'Generate comprehensive decision tables from business rules and requirements.',
-      imageUrl: 'https://images.pexels.com/photos/5474305/pexels-photo-5474305.jpeg?auto=compress&cs=tinysrgb&w=800',
+      description:
+        'Készíts átfogó döntési táblákat üzleti szabályokból és követelményekből.',
+      imageUrl:
+        'https://images.pexels.com/photos/5474305/pexels-photo-5474305.jpeg?auto=compress&cs=tinysrgb&w=800',
       downloadUrl: '#',
     },
   ];
 
-  const filteredResources = resources.filter(resource => {
+  const filteredResources = resources.filter((resource) => {
     const matchesFilter = selectedFilter === 'all' || resource.type === selectedFilter;
-    const matchesSearch = resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         resource.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch =
+      resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      resource.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesFilter && matchesSearch;
   });
 
@@ -86,16 +99,44 @@ export default function LearnPage() {
     }
   };
 
+  const getFilterLabel = (filter: 'all' | 'book' | 'whitepaper' | 'tool') => {
+    switch (filter) {
+      case 'all':
+        return 'Összes';
+      case 'book':
+        return 'Könyvek';
+      case 'whitepaper':
+        return 'White paper-ek';
+      case 'tool':
+        return 'Eszközök';
+      default:
+        return filter;
+    }
+  };
+
+  const getTypeLabel = (type: 'book' | 'whitepaper' | 'tool') => {
+    switch (type) {
+      case 'book':
+        return 'Könyv';
+      case 'whitepaper':
+        return 'White paper';
+      case 'tool':
+        return 'Eszköz';
+      default:
+        return type;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Learn Test Design
+            Teszttervezés tanulása
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Access our comprehensive library of books, white papers, and tools to master
-            test design techniques and elevate your testing skills.
+            Férj hozzá könyvek, white paper-ek és eszközök átfogó gyűjteményéhez, hogy
+            elsajátítsd a teszttervezési technikákat és magasabb szintre emeld a tesztelési tudásod.
           </p>
         </div>
 
@@ -105,7 +146,7 @@ export default function LearnPage() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search resources..."
+                placeholder="Keresés az anyagok között..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
@@ -125,7 +166,7 @@ export default function LearnPage() {
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
-                    {filter.charAt(0).toUpperCase() + filter.slice(1)}
+                    {getFilterLabel(filter)}
                   </button>
                 ))}
               </div>
@@ -146,9 +187,13 @@ export default function LearnPage() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 right-4">
-                  <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium ${getTypeBadgeColor(resource.type)}`}>
+                  <span
+                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium ${getTypeBadgeColor(
+                      resource.type
+                    )}`}
+                  >
                     {getTypeIcon(resource.type)}
-                    {resource.type}
+                    {getTypeLabel(resource.type)}
                   </span>
                 </div>
               </div>
@@ -163,7 +208,7 @@ export default function LearnPage() {
 
                 <button className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all shadow-sm hover:shadow-md">
                   <Download className="h-5 w-5" />
-                  Download {resource.type === 'tool' ? 'Tool' : 'PDF'}
+                  Letöltés {resource.type === 'tool' ? 'Eszköz' : 'PDF'}
                 </button>
               </div>
             </div>
@@ -173,8 +218,12 @@ export default function LearnPage() {
         {filteredResources.length === 0 && (
           <div className="text-center py-16">
             <Search className="h-16 w-16 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No resources found</h3>
-            <p className="text-gray-600">Try adjusting your search or filter criteria</p>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Nincs találat
+            </h3>
+            <p className="text-gray-600">
+              Próbáld meg módosítani a keresést vagy a szűrési feltételeket
+            </p>
           </div>
         )}
       </div>
