@@ -11,13 +11,14 @@ export default function Footer() {
                 <Target className="h-6 w-6 text-white" />
               </div>
               <div>
-                <div className="text-lg font-bold text-white">Test Design</div>
-                <div className="text-xs text-gray-400">Learn. Exercise. Apply.</div>
+                <div className="text-lg font-bold text-white">Teszttervezés</div>
+                <div className="text-xs text-gray-400">Tanulj. Gyakorolj. Alkalmazd.</div>
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-4 max-w-md">
-              Empowering software testers and QA professionals with the knowledge, tools,
-              and community to design better tests and build higher quality software.
+              Segítjük a szoftvertesztelőket és QA szakembereket tudással, eszközökkel
+              és közösséggel, hogy jobb teszteket tervezzenek és magasabb minőségű
+              szoftvereket hozzanak létre.
             </p>
             <div className="flex gap-3">
               <a href="#" className="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
@@ -36,30 +37,30 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Resources</h3>
+            <h3 className="text-white font-semibold mb-4">Erőforrások</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Books</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">White Papers</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Tools</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">Könyvek</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">White paper-ek</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">Eszközök</a></li>
               <li><a href="#" className="hover:text-cyan-400 transition-colors">Blog</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
+            <h3 className="text-white font-semibold mb-4">Vállalat</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Test Design Manifesto</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">Rólunk</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">Teszttervezési kiáltvány</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">Adatvédelmi irányelvek</a></li>
+              <li><a href="#" className="hover:text-cyan-400 transition-colors">Felhasználási feltételek</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          <p>© 2025 Test Design. All rights reserved.</p>
+          <p>© 2025 Teszttervezés. Minden jog fenntartva.</p>
           <p className="mt-2 md:mt-0">
-            <span className="text-cyan-400 font-semibold">2,776+</span> registered test designers worldwide
+            <span className="text-cyan-400 font-semibold">2 776+</span> regisztrált teszttervező világszerte
           </p>
         </div>
       </div>
