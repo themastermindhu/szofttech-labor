@@ -5,51 +5,57 @@ export default function ExercisesPage() {
   const exercises: Exercise[] = [
     {
       id: '1',
-      title: 'SafeMoney Bank Application',
+      title: 'SafeMoney Bank alkalmazás',
       difficulty: 'beginner',
-      description: 'Practice equivalence partitioning and boundary value analysis on a banking application scenario. Learn to identify valid and invalid partitions for account transactions.',
-      duration: '45 min',
-      tags: ['Equivalence Partitioning', 'Boundary Value Analysis', 'Banking'],
+      description:
+        'Gyakorold az ekvivalenciaosztály-elemzést és a határérték-analízist egy banki alkalmazás példáján. Tanuld meg az érvényes és érvénytelen partíciók azonosítását a tranzakciók során.',
+      duration: '45 perc',
+      tags: ['Ekvivalenciaosztályok', 'Határérték-analízis', 'Banki rendszer'],
     },
     {
       id: '2',
-      title: 'E-Commerce Checkout Flow',
+      title: 'E-kereskedelmi fizetési folyamat',
       difficulty: 'intermediate',
-      description: 'Design test cases for a complex checkout process with multiple payment methods, discount codes, and shipping options using decision tables.',
-      duration: '60 min',
-      tags: ['Decision Tables', 'State Transition', 'E-Commerce'],
+      description:
+        'Tervezd meg a teszteseteket egy összetett fizetési folyamathoz többféle fizetési móddal, kedvezménykódokkal és szállítási opciókkal döntési táblák segítségével.',
+      duration: '60 perc',
+      tags: ['Döntési táblák', 'Állapotátmenet', 'E-kereskedelem'],
     },
     {
       id: '3',
-      title: 'Mobile App State Transitions',
+      title: 'Mobilalkalmazás állapotátmenetek',
       difficulty: 'intermediate',
-      description: 'Create comprehensive state transition diagrams and test cases for a mobile app with login, offline mode, and synchronization features.',
-      duration: '90 min',
-      tags: ['State Transition', 'Mobile', 'Synchronization'],
+      description:
+        'Készíts átfogó állapotátmeneti diagramokat és teszteseteket egy mobilalkalmazáshoz bejelentkezéssel, offline móddal és szinkronizációs funkciókkal.',
+      duration: '90 perc',
+      tags: ['Állapotátmenet', 'Mobil', 'Szinkronizáció'],
     },
     {
       id: '4',
-      title: 'API Configuration Testing',
+      title: 'API konfiguráció tesztelése',
       difficulty: 'advanced',
-      description: 'Apply pairwise testing to efficiently test a REST API with multiple configuration parameters and dependencies.',
-      duration: '120 min',
-      tags: ['Pairwise Testing', 'API', 'Combinatorial'],
+      description:
+        'Alkalmazz páronkénti tesztelést (pairwise) egy REST API hatékony teszteléséhez több konfigurációs paraméterrel és függőséggel.',
+      duration: '120 perc',
+      tags: ['Páronkénti tesztelés', 'API', 'Kombinatorikus'],
     },
     {
       id: '5',
-      title: 'Risk-Based Test Prioritization',
+      title: 'Kockázatalapú tesztprioritás',
       difficulty: 'advanced',
-      description: 'Analyze a complex system and prioritize test cases based on risk assessment, business impact, and technical complexity.',
-      duration: '90 min',
-      tags: ['Risk-Based Testing', 'Test Strategy', 'Prioritization'],
+      description:
+        'Elemezz egy összetett rendszert, és rangsorold a teszteseteket kockázatelemzés, üzleti hatás és technikai összetettség alapján.',
+      duration: '90 perc',
+      tags: ['Kockázatalapú tesztelés', 'Tesztstratégia', 'Prioritás'],
     },
     {
       id: '6',
-      title: 'Form Validation Challenge',
+      title: 'Űrlapvalidációs kihívás',
       difficulty: 'beginner',
-      description: 'Design efficient test cases for a registration form with various field types, validation rules, and error handling.',
-      duration: '30 min',
-      tags: ['Boundary Value', 'Equivalence Partitioning', 'Forms'],
+      description:
+        'Tervezd meg a hatékony teszteseteket egy regisztrációs űrlaphoz különböző mezőtípusokkal, validációs szabályokkal és hibakezeléssel.',
+      duration: '30 perc',
+      tags: ['Határérték-analízis', 'Ekvivalenciaosztályok', 'Űrlapok'],
     },
   ];
 
@@ -73,11 +79,11 @@ export default function ExercisesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Practice Exercises
+            Gyakorló feladatok
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Apply your test design knowledge with hands-on exercises crafted by industry experts.
-            From beginner to advanced, we have challenges for every skill level.
+            Alkalmazd a teszttervezési tudásodat iparági szakértők által készített,
+            gyakorlatorientált feladatokon. Kezdőtől haladó szintig mindenki talál kihívást.
           </p>
         </div>
 
@@ -86,10 +92,18 @@ export default function ExercisesPage() {
           <div className="relative">
             <div className="flex items-center gap-2 mb-4">
               <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
-                Featured Exercise
+                Kiemelt feladat
               </div>
-              <div className={`px-3 py-1 rounded-full text-sm font-medium ${getDifficultyColor(featuredExercise.difficulty)}`}>
-                {featuredExercise.difficulty}
+              <div
+                className={`px-3 py-1 rounded-full text-sm font-medium ${getDifficultyColor(
+                  featuredExercise.difficulty
+                )}`}
+              >
+                {featuredExercise.difficulty === 'beginner'
+                  ? 'kezdő'
+                  : featuredExercise.difficulty === 'intermediate'
+                  ? 'középhaladó'
+                  : 'haladó'}
               </div>
             </div>
 
@@ -108,22 +122,24 @@ export default function ExercisesPage() {
               </div>
               <div className="flex items-center gap-2">
                 <Tag className="h-5 w-5" />
-                <span>{featuredExercise.tags.length} techniques</span>
+                <span>{featuredExercise.tags.length} technika</span>
               </div>
             </div>
 
             <button className="group px-8 py-4 bg-white text-cyan-700 rounded-xl text-lg font-semibold hover:bg-cyan-50 transition-all shadow-lg hover:shadow-xl flex items-center gap-2">
-              Start Exercise
+              Feladat indítása
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
 
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-gray-900">All Exercises</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Összes feladat</h2>
           <div className="flex items-center gap-2 text-gray-600">
             <TrendingUp className="h-5 w-5" />
-            <span className="text-sm font-medium">{exercises.length} exercises available</span>
+            <span className="text-sm font-medium">
+              {exercises.length} feladat érhető el
+            </span>
           </div>
         </div>
 
@@ -138,8 +154,16 @@ export default function ExercisesPage() {
                   <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
                     <Target className="h-5 w-5 text-white" />
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${getDifficultyColor(exercise.difficulty)}`}>
-                    {exercise.difficulty}
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs font-medium ${getDifficultyColor(
+                      exercise.difficulty
+                    )}`}
+                  >
+                    {exercise.difficulty === 'beginner'
+                      ? 'kezdő'
+                      : exercise.difficulty === 'intermediate'
+                      ? 'középhaladó'
+                      : 'haladó'}
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5 text-gray-600">
@@ -168,7 +192,7 @@ export default function ExercisesPage() {
               </div>
 
               <button className="w-full group/btn flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all shadow-sm hover:shadow-md">
-                Start Exercise
+                Feladat indítása
                 <ArrowRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -178,14 +202,14 @@ export default function ExercisesPage() {
         <div className="mt-16 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200 p-8 text-center">
           <Target className="h-12 w-12 text-cyan-600 mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            Want More Practice?
+            Több gyakorlásra vágysz?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Join our community to access exclusive advanced exercises, participate in challenges,
-            and get feedback from experienced test designers.
+            Csatlakozz közösségünkhöz, hogy exkluzív haladó feladatokhoz férj hozzá,
+            részt vegyél kihívásokban, és visszajelzést kapj tapasztalt teszttervezőktől.
           </p>
           <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl">
-            Join the Community
+            Csatlakozás a közösséghez
           </button>
         </div>
       </div>
